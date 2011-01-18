@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- MAIN Activity Strings (Preferences) -->
+	<string name="app_name">SMS2Mail</string>
+    <string name="title_enable">Activé</string>
+    <string name="summary_enable">Activer l\'envoi de sms vers l\'adresse e-mail</string>
+    <string name="title_email">E-mail</string>
+    <string name="summary_email">Adresse e-mail de destination</string>
+    <string name="cat_gmail">Configuration gmail pour envoi des mails</string>
+    <string name="title_gmail">Nom d\'utilisateur</string>
+    <string name="summary_gmail">Entrer votre nom d\'utilisateur gmail</string>
+    <string name="title_gmailpwd">Mot de passe</string>
+    <string name="summary_gmailpwd">Entrez votre mot de passe gmail</string>
+    <!-- Menu  -->
+    <string name="menu_test">"Tester la configuration"</string>
+    <string name="menu_quit">"Quitter"</string> 
+    
+    <!-- TEST DE CONFIGURATION -->
+    <!-- E-MAIL de Test -->
+    <string name="test_mail_subject">SMS2Email : test de configuration</string>
+    <string name="test_mail_body">Lorsque SMS2Mail est activé, vous recevrez vos sms par e-mail à condition d\'avoir la connectivé data dès reception du SMS !</string>
+    <!-- Toast message  -->
+    <string name="test_ok">Vérifiez la réception du message de test du compte GMAIL à l\'adresse EMAIL</string>
+    <string name="test_notok">Erreur dans la configuration du compte GMAIL : MSG</string>
+    <string name="test_nodata">Vous devez insérer toutes les données !</string>
+    
+    <!-- SMS Subject -->
+    <string name="sms_subject">SMS de </string>  
+    
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  	<CheckBoxPreference
+ 		android:key="enable"	 
+		android:title="@string/title_enable"
+		android:summary="@string/summary_enable">	 
+	</CheckBoxPreference>
+	<EditTextPreference	 
+		android:key="email"	 
+		android:title="@string/title_email"
+		android:summary="@string/summary_email"
+		android:inputType="textEmailAddress">
+	</EditTextPreference>
+
+	<PreferenceCategory android:title="@string/cat_gmail">
+	 	<EditTextPreference	 
+			android:key="gmail"			
+			android:title="@string/title_gmail"
+			android:summary="@string/summary_gmail">	 
+		</EditTextPreference> 
+		<EditTextPreference	 
+			android:title="@string/title_gmailpwd"	 
+			android:key="gmailpwd"
+			android:summary="@string/summary_gmailpwd"
+			android:password="true">	 
+		</EditTextPreference>
+ 	</PreferenceCategory>
+</PreferenceScreen>

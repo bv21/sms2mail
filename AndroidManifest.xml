@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="be.nymouas.sms2mail"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".SMS2Mail"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+          
+        <!-- Receiver to retrieve received sms -->
+        <receiver  android:name=".SMSReceiver"> 
+            <intent-filter android:priority="120"> 
+                <action android:name=
+                    "android.provider.Telephony.SMS_RECEIVED" /> 
+            </intent-filter> 
+        </receiver>
+        
+        <!-- Widget receiver -->
+        <receiver android:name=".Widget" >
+    		<intent-filter>
+        		<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        		<!-- Extra intent : toggle enable value  -->
+        		<action android:name="be.nymouas.sms2mail.intent.action.ENABLE_CHANGED"/>
+        		<!-- Extra intent : update the widgets -->        		
+        		<action android:name="be.nymouas.sms2mail.intent.action.CHANGE_REQUEST"/>
+    		</intent-filter>
+    		<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget" />
+		</receiver>
+
+    </application>
+    <uses-sdk android:minSdkVersion="5" />
+    <!-- Permission to receive sms  -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- Permission to access internet in order to forward e-mail -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- Permission to read contact in order to retrieve the contact with the phone number -->	
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+
+</manifest> 
