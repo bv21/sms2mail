@@ -10,13 +10,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+
 public class SMS2Mail extends PreferenceActivity {
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);   
         //create the preference window to configure the application
-        addPreferencesFromResource(R.xml.preferences);
+        addPreferencesFromResource(R.xml.preferences);        
     }
     
     //execute after the button home is pressed  
@@ -53,6 +55,10 @@ public class SMS2Mail extends PreferenceActivity {
     		RefreshWidgets();   //refresh menu
     		this.finish();	  //close the application
     		break;
+    		
+    	case R.id.itemHelp:
+    		ShowHelp(); //show help menu
+    		break;
     	
     	case R.id.itemTestConfig:  //menu test config		
     		TestConfig(); //test the configuration  
@@ -72,33 +78,18 @@ public class SMS2Mail extends PreferenceActivity {
         this.sendBroadcast(message);
     } 
     
-    //Test the configuration by sending an e-mail 
-    private void TestConfig() 
+    //Show help menu
+    private void ShowHelp()
     {
-    	//retrieve the configuration from the preferences 
-    	SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);		
-		String gmail=preferences.getString("gmail","");		
-		String gmailpwd=preferences.getString("gmailpwd","");
-		String email=preferences.getString("email", "");
-		//check if the configuration is ok 
-		if ((gmail.length()>0) && (gmailpwd.length()>0) && (email.length()>0))
-		{			
-			try {			
-				//send the test e-mail and show the result
-        		GMailSender sender = new GMailSender(gmail,gmailpwd);    
-        		sender.sendMail(this.getResources().getString(R.string.test_mail_subject),this.getResources().getString(R.string.test_mail_body),gmail+"@gmail.com",email);  
-        		Toast.makeText(this,this.getResources().getString(R.string.test_ok).replace("GMAIL",gmail).replace("EMAIL",email), Toast.LENGTH_LONG).show();
-        	} catch (Exception e) {        		
-        		String msg=e.getMessage();
-        		if (msg==null) msg="";
-        		//show the error 
-        		Toast.makeText(this, this.getResources().getString(R.string.test_notok).replace("GMAIL", gmail).replace("MSG",msg), Toast.LENGTH_LONG).show();
-        	}
-			
-		}	
-		//show a message because the configuration is not set correctly !
-		else Toast.makeText(this,this.getResources().getString(R.string.test_nodata), Toast.LENGTH_LONG).show(); 
-    	
+    	Toast.makeText(this, getResources().getString(R.string.help_txt), Toast.LENGTH_SHORT).show();
     }
     
+    //Test the configuration by sending an e-mail 
+    private void TestConfig() 
+    {     
+    	//run the test config in a thread in order to show a progress bar
+    	TestMailThread testmail=new TestMailThread(this);
+    	testmail.start();   	
+    }
+         
 }

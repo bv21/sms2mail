@@ -13,7 +13,9 @@
     <string name="summary_gmailpwd">Entrez votre mot de passe gmail</string>
     <!-- Menu  -->
     <string name="menu_test">"Tester la configuration"</string>
+    <string name="menu_help">"Aide"</string>
     <string name="menu_quit">"Quitter"</string> 
+    <string name="help_txt">"Aide pas encore disponible !"</string>
     
     <!-- TEST DE CONFIGURATION -->
     <!-- E-MAIL de Test -->
@@ -23,6 +25,7 @@
     <string name="test_ok">Vérifiez la réception du message de test du compte GMAIL à l\'adresse EMAIL</string>
     <string name="test_notok">Erreur dans la configuration du compte GMAIL : MSG</string>
     <string name="test_nodata">Vous devez insérer toutes les données !</string>
+    <string name="test_bar">Envoi d\'un e-mail de test en cours !</string>
     
     <!-- SMS Subject -->
     <string name="sms_subject">SMS de </string>  

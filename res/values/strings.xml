@@ -13,7 +13,9 @@
     <string name="summary_gmailpwd">Enter your gmail\'s password</string>
     <!-- Menu  -->
     <string name="menu_test">"Configuration test"</string>
+    <string name="menu_help">"Help"</string>
     <string name="menu_quit">"Quit"</string> 
+    <string name="help_txt">"Help not yet available, sorry !"</string>
     
     <!-- TEST DE CONFIGURATION -->
     <!-- E-MAIL de Test -->
@@ -23,6 +25,7 @@
     <string name="test_ok">Check if you receive the test e-mail from GMAIL to your address EMAIL</string>
     <string name="test_notok">Error in the GMAIL\'s configuration : MSG</string>
     <string name="test_nodata">You have to input all data !</string>
+    <string name="test_bar">Sending mail for testing purpose !</string>
     
     <!-- SMS Subject -->
     <string name="sms_subject">SMS from </string>    
