@@ -1,5 +1,9 @@
 package be.nymouas.sms2mail;
 
+/*
+ * MAIN Activity : show preference/settings for e-mail & gmail configuration 
+ */
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;

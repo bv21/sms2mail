@@ -1,5 +1,9 @@
 package be.nymouas.sms2mail;
 
+/*
+ * Thread for sending a test e-mail to check the configuraiton
+ */
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
@@ -8,12 +12,17 @@ import android.widget.Toast;
 
 public class TestMailThread extends Thread {
 
-	private Activity activity;
-	private ProgressDialog progressdialog;
-	private String toastmsg="";
+	private Activity activity; 				//parent activity that executes this thread
+	private ProgressDialog progressdialog;	//progress dialog
+	private String toastmsg="";				//message to show after testing by a Toas
+	
+	/*
+	 * constructor
+	 */
 	
 	public TestMailThread(Activity activity_) {		
 		activity=activity_;		
+		//show a progress dialog
 		progressdialog=ProgressDialog.show(activity,"",activity.getResources().getString(R.string.test_bar),true,false);		
 	}
 	
@@ -41,6 +50,7 @@ public class TestMailThread extends Thread {
 		// the configuration is not set correctly !
 		else toastmsg=activity.getResources().getString(R.string.test_nodata);
 		
+		//close the progress dialog
 		progressdialog.dismiss();		
 		
 		//needed to show a toast from a thread !

@@ -1,6 +1,12 @@
 package be.nymouas.sms2mail;
 
+/*
+ * Thread for sending e-mail with a gmail account 
+ */
+
+
 import android.util.Log;
+
 
 public class SendMailThread extends Thread {
 	static private final String TAG=Constants.DEBUG_TAG;

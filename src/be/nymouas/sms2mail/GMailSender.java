@@ -1,6 +1,16 @@
 package be.nymouas.sms2mail;
 
- import java.io.ByteArrayInputStream;  
+/*
+ * class taken from http://www.androidsnippets.org/snippets/166/
+ * or http://stackoverflow.com/questions/2020088/sending-email-in-android-using-javamail-api-without-using-the-default-android-ap
+ * 
+ * Use the android javamail library for sending an e-mail with a gmail account 
+ * 
+ * Remark : small modification 
+ */
+
+ 
+import java.io.ByteArrayInputStream;  
  import java.io.IOException;  
  import java.io.InputStream;  
  import java.io.OutputStream;  
@@ -15,6 +25,8 @@ package be.nymouas.sms2mail;
  import javax.mail.internet.InternetAddress;  
  import javax.mail.internet.MimeMessage;  
    
+ 
+ 
  public class GMailSender extends javax.mail.Authenticator {  
      private String mailhost = "smtp.gmail.com";  
      private String user;  
@@ -36,7 +48,7 @@ package be.nymouas.sms2mail;
          props.put("mail.smtp.socketFactory.fallback", "false");  
          props.setProperty("mail.smtp.quitwait", "false");  
    
-         session = Session.getInstance(props, this);
+         session = Session.getInstance(props, this); //small modification from the original class !
         
      }  
    

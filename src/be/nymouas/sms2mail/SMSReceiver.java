@@ -1,5 +1,12 @@
 package be.nymouas.sms2mail;
 
+/*
+ *  This broadcast receiver is execute when a SMS is received !
+ *  
+ *  This class is based on the tutorial : http://www.androidcompetencycenter.com/2008/12/android-api-sms-handling/
+ *  
+ */
+
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;

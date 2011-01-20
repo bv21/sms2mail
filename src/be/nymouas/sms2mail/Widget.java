@@ -1,5 +1,10 @@
 package be.nymouas.sms2mail;
 
+/*
+ * Class Widget responsible for widget update & intent (Broadcast receiver)
+ * This widget allows to easily enable or disable the sms forwarding to an e-mail address
+ */
+
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -19,6 +24,7 @@ public class Widget extends AppWidgetProvider {
 	
 	public static final String TAG=Constants.DEBUG_TAG; //DEBUG Tag
 	
+	//AppWidgetProvider is a BroadcastReceiver, here we treat other intent (widgets update and click action)
 	public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
         //special intent when the enable is changed ! (allow update widgets outside and inside this class)
